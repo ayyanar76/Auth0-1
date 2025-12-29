@@ -39,7 +39,7 @@ router.get('/google/callback',
            })
           
            res.redirect(
-            "http://localhost:5173/"
+            "https://auth0-1front-xhlm.onrender.com/"
            )
         } catch (error) {
              res.status(403).json({
