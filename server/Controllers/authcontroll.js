@@ -88,13 +88,15 @@ export const loguser = async (req, res) => {
     res.cookie("accessToken", accessToken, {
       httpOnly: true,
       maxAge: 15 * 60 * 1000,
-      sameSite: "lax",
+      sameSite: "none",
+       secure:true
     });
 
     res.cookie("refreshToken", refreshToken, {
       httpOnly: true,
       maxAge: 7 * 24 * 60 * 60 * 1000,
-      sameSite: "lax",
+      sameSite: "none",
+       secure:true
     });
 
     // 6️⃣ Success response
@@ -217,7 +219,8 @@ export const refresh = (req, res) => {
     res.cookie("accessToken", accessToken, {
       httpOnly: true,
       maxAge: 15 * 60 * 1000,
-      sameSite: "lax",
+     sameSite: "none",
+       secure:true
     });
   });
 
