@@ -20,7 +20,7 @@ app.use(cookieParser())
 
 app.use(cors(
     {
-        origin:"https://auth0-1front-xhlm.onrender.com",
+        origin:"https://backend-auth-z8ke.onrender.com",
         credentials:true
     }
 ))
