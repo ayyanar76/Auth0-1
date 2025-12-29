@@ -28,18 +28,18 @@ router.get('/google/callback',
            res.cookie("accessToken",accessToken,{
             maxAge:15*60*1000,
             httpOnly:true,
-            secure:process.env.NODE_ENV === "production",
-            sameSite:process.env.NODE_ENV === "production"?"none":"strict"
+            secure:true,
+            sameSite:"none"
            })
             res.cookie("refreshToken",refreshToken,{
             maxAge:7*24*60*60*1000,
             httpOnly:true,
-            secure:process.env.NODE_ENV === "production",
-            sameSite:process.env.NODE_ENV === "production"?"none":"strict"
+            secure:true,
+            sameSite:"none"
            })
           
            res.redirect(
-            "https://auth0-1front-xhlm.onrender.com/"
+            "https://backend-auth-z8ke.onrender.com/"
            )
         } catch (error) {
              res.status(403).json({
