@@ -4,7 +4,7 @@ import { createContext, useEffect, useState } from "react";
 export const Appcontext = createContext(null);
 
 const AppContextProvider = ({ children }) => {
-  const backendUrl = "http://localhost:5001/api/auth";
+  const backendUrl = "https://backend-auth-z8ke.onrender.com/api/auth";
   const [isLoged, setIsLogged] = useState(false);
   const [userdata,setuserdata] = useState()
     
