@@ -52,7 +52,7 @@ const Login = () => {
           e.preventDefault()
    try {
   
-     window.location.href = "http://localhost:5001/api/auth/google";
+     window.location.href = "https://backend-auth-z8ke.onrender.com/api/auth/google";
    
     } catch (error) {
     console.log(error.message);
