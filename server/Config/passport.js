@@ -11,7 +11,7 @@ passport.use(
     {
         clientID:process.env.CLIENT_ID,
         clientSecret:process.env.CLIENT_SECERET,
-        callbackURL:'/api/auth/google/callback'
+        callbackURL:'https://backend-auth-z8ke.onrender.com/api/auth/google/callback'
     },
     async(accessToken,refreshToken,profile,done)=>{
         try {
