@@ -17,13 +17,24 @@ const app = express()
 
 app.use(express.json())
 app.use(cookieParser())
+const allowedOrigins = [
+  "https://auth0-1front.onrender.com",
+];
 
-app.use(cors(
-    {
-        origin:"https://backend-auth-z8ke.onrender.com",
-        credentials:true
-    }
-))
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  })
+);
+app.options("*", cors());
 ConnectDB()
 
 app.use(passport.initialize())
